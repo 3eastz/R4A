@@ -1,0 +1,703 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rise for All - Revolutionary Patriot Token</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://s3.tradingview.com/tv.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <meta name="description" content="Rise for All (RFA) - Revolutionary Patriot Token on Solana. Join the future of decentralized finance with RFA Token.">
+  <meta name="keywords" content="Rise for All, RFA Token, Solana, Cryptocurrency, DeFi, Patriot Token">
+  <meta property="og:title" content="Rise for All - Revolutionary Patriot Token">
+  <meta property="og:description" content="Join the future of decentralized finance with Rise for All Token on Solana">
+  <meta property="og:image" content="logo.svg">
+  <meta property="og:url" content="https://riseforall.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div id="vanta-bg"></div>
+  <div class="grain-overlay"></div>
+  
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="nav-content">
+      <div class="logo">
+        <img src="logo.svg" alt="Rise for All Logo" width="40" height="40">
+        <span>Rise for All</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#presale">Presale</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="whitepaper.md" target="_blank">Whitepaper</a>
+        <button class="connect-wallet" onclick="connectWallet()">Connect Wallet</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content wrapper -->
+  <main>
+    <!-- Hero Section -->
+    <header>
+      <div class="hero">
+        <div class="liberty-token-container">
+          <img src="logo.svg" alt="Rise for All Token" class="large-token-logo">
+        </div>
+        <div class="price-controls admin-only" style="display: none;">
+          <button class="price-control-btn boost" onclick="boostPrice()">
+            <span class="btn-icon">🚀</span>
+            Boost
+          </button>
+          <button class="price-control-btn reroll" onclick="rerollPrice()">
+            <span class="btn-icon">🎲</span>
+            Reroll
+          </button>
+          <button class="price-control-btn reset" onclick="resetPrice()">
+            <span class="btn-icon">↺</span>
+            Reset
+          </button>
+          <button class="price-control-btn logout" onclick="adminLogout()">
+            <span class="btn-icon">🚪</span>
+            Logout
+          </button>
+        </div>
+        <h1>A World Reimagined, <span class="highlight">A Future Shared</span></h1>
+        <p>Rise for All Token - The People's Choice for Financial Freedom</p>
+        <div class="cta-buttons">
+          <button class="primary" onclick="buyTokens()">Buy $RFA</button>
+          <a href="https://t.me/riseforallcoin" class="secondary" target="_blank">Join the Movement</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <h3>Total Supply</h3>
+            <p>1 Billion RFA</p>
+          </div>
+          <div class="stat">
+            <h3>Initial Price</h3>
+            <p>$0.0000000015</p>
+          </div>
+          <div class="stat">
+            <h3>Launch</h3>
+            <p>Q1 2025</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Presale Section -->
+    <section id="presale" data-aos="fade-up" class="presale-section">
+      <h2>Presale Details</h2>
+      <div class="presale-container">
+        <div class="presale-info">
+          <div class="presale-stages">
+            <div class="stage-card">
+              <div class="stage-header">
+                <h3>Phase 1</h3>
+                <span class="stage-status active">Ongoing</span>
+              </div>
+              <div class="stage-price">1 SOL = 150,000 RFA</div>
+              <div class="stage-progress">
+                <div class="progress-bar" style="--progress: 35%"></div>
+                <div class="progress-text">35% Completed</div>
+              </div>
+              <div class="stage-details">
+                <div class="detail-item">
+                  <span class="label">Soft Cap:</span>
+                  <span class="value">5,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Hard Cap:</span>
+                  <span class="value">10,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Min Buy:</span>
+                  <span class="value">1 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Max Buy:</span>
+                  <span class="value">50 SOL</span>
+                </div>
+              </div>
+              <button class="buy-now-btn" onclick="buyPresale()">Buy Now</button>
+            </div>
+
+            <div class="stage-card upcoming">
+              <div class="stage-header">
+                <h3>Phase 2</h3>
+                <span class="stage-status">Coming Soon</span>
+              </div>
+              <div class="stage-price">1 SOL = 120,000 RFA</div>
+              <div class="stage-progress">
+                <div class="progress-bar" style="--progress: 0%"></div>
+                <div class="progress-text">Starts in 25d</div>
+              </div>
+              <div class="stage-details">
+                <div class="detail-item">
+                  <span class="label">Soft Cap:</span>
+                  <span class="value">8,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Hard Cap:</span>
+                  <span class="value">15,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Min Buy:</span>
+                  <span class="value">1 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Max Buy:</span>
+                  <span class="value">75 SOL</span>
+                </div>
+              </div>
+              <button class="buy-now-btn disabled">Coming Soon</button>
+            </div>
+
+            <div class="stage-card upcoming">
+              <div class="stage-header">
+                <h3>Phase 3</h3>
+                <span class="stage-status">Upcoming</span>
+              </div>
+              <div class="stage-price">1 SOL = 100,000 RFA</div>
+              <div class="stage-progress">
+                <div class="progress-bar" style="--progress: 0%"></div>
+                <div class="progress-text">Phase 2 must complete</div>
+              </div>
+              <div class="stage-details">
+                <div class="detail-item">
+                  <span class="label">Soft Cap:</span>
+                  <span class="value">10,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Hard Cap:</span>
+                  <span class="value">20,000 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Min Buy:</span>
+                  <span class="value">1 SOL</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Max Buy:</span>
+                  <span class="value">100 SOL</span>
+                </div>
+              </div>
+              <button class="buy-now-btn disabled">Coming Soon</button>
+            </div>
+          </div>
+
+          <div class="presale-timer">
+            <h3>Presale Phase 2 Starts in</h3>
+            <div class="timer-container">
+              <div class="timer-block">
+                <span class="time" id="days">25</span>
+                <span class="label">Days</span>
+              </div>
+              <div class="timer-block">
+                <span class="time" id="hours">12</span>
+                <span class="label">Hours</span>
+              </div>
+              <div class="timer-block">
+                <span class="time" id="minutes">00</span>
+                <span class="label">Minutes</span>
+              </div>
+              <div class="timer-block">
+                <span class="time" id="seconds">00</span>
+                <span class="label">Seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="presale-stats">
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-content">
+                <h4>Target Raise</h4>
+                <p>21 SOL</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📊</div>
+              <div class="stat-content">
+                <h4>Initial MCap</h4>
+                <p>$70K</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">💎</div>
+              <div class="stat-content">
+                <h4>Initial Price</h4>
+                <p>$0.0000000015</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Data Section -->
+    <section id="live-data" data-aos="fade-up">
+      <h2>Live Market Data</h2>
+      <div class="chart-wrapper">
+        <style>
+          .chart-wrapper {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+          
+          .chart-wrapper canvas {
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+          }
+        </style>
+        <!-- Price chart will be inserted here -->
+      </div>
+      
+      <h3>Live Transactions</h3>
+      <div class="transaction-feed">
+        <!-- Transaction feed will be populated here -->
+      </div>
+      
+      <div class="token-metrics">
+        <h3>Token Burn Tracker</h3>
+        <div class="token-burn-counter">0 RFA</div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Rise for All</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🌟</div>
+          <h3>Freedom First</h3>
+          <p>A decentralized token leading the future of inclusive finance</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Community Powered</h3>
+          <p>Transparent governance driven by and for the community</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Innovation Driven</h3>
+          <p>Built on cutting-edge blockchain technology for global impact</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" data-aos="fade-up">
+      <h2>Revolutionary Features</h2>
+      <div class="enhanced-features">
+        <!-- Security Features -->
+        <div class="feature-card" data-aos="flip-left">
+          <div class="feature-icon-container">
+            <span class="rotating-icon">🛡️</span>
+          </div>
+          <h3>Advanced Security</h3>
+          <ul class="feature-list">
+            <li>Multi-signature treasury</li>
+            <li>Automated audit system</li>
+            <li>Anti-bot protection</li>
+            <li>Time-locked liquidity</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 100%"></div>
+          </div>
+        </div>
+
+        <!-- Economic Features -->
+        <div class="feature-card" data-aos="flip-right">
+          <div class="feature-icon-container">
+            <span class="floating-icon">💎</span>
+          </div>
+          <h3>Economic Model</h3>
+          <ul class="feature-list">
+            <li>Deflationary mechanism</li>
+            <li>Reflection rewards</li>
+            <li>Auto liquidity generation</li>
+            <li>Strategic buybacks</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 95%"></div>
+          </div>
+        </div>
+
+        <!-- Governance Features -->
+        <div class="feature-card" data-aos="flip-up">
+          <div class="feature-icon-container">
+            <span class="pulsing-icon">🏛️</span>
+          </div>
+          <h3>Community Governance</h3>
+          <ul class="feature-list">
+            <li>Decentralized voting</li>
+            <li>Proposal system</li>
+            <li>Transparent decisions</li>
+            <li>Equal voting rights</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 90%"></div>
+          </div>
+        </div>
+
+        <!-- Technology Features -->
+        <div class="feature-card" data-aos="flip-down">
+          <div class="feature-icon-container">
+            <span class="bouncing-icon">⚡</span>
+          </div>
+          <h3>Advanced Technology</h3>
+          <ul class="feature-list">
+            <li>Solana blockchain</li>
+            <li>High-speed transactions</li>
+            <li>Low gas fees</li>
+            <li>Scalable architecture</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 85%"></div>
+          </div>
+        </div>
+
+        <!-- Community Features -->
+        <div class="feature-card" data-aos="flip-left">
+          <div class="feature-icon-container">
+            <span class="rotating-icon">🤝</span>
+          </div>
+          <h3>Community Benefits</h3>
+          <ul class="feature-list">
+            <li>Staking rewards</li>
+            <li>Holder incentives</li>
+            <li>Community events</li>
+            <li>Regular airdrops</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 80%"></div>
+          </div>
+        </div>
+
+        <!-- Future Development -->
+        <div class="feature-card" data-aos="flip-right">
+          <div class="feature-icon-container">
+            <span class="pulsing-icon">🚀</span>
+          </div>
+          <h3>Future Development</h3>
+          <ul class="feature-list">
+            <li>Cross-chain bridges</li>
+            <li>DeFi integrations</li>
+            <li>NFT marketplace</li>
+            <li>Mobile wallet</li>
+          </ul>
+          <div class="feature-progress">
+            <div class="progress-bar" style="--progress: 75%"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" data-aos="fade-up">
+      <div class="tokenomics-card">
+        <div class="tokenomics-header">
+          <h2>Revolutionary Tokenomics</h2>
+          <p>Transparent and sustainable token distribution designed for long-term growth</p>
+        </div>
+        <div class="tokenomics-content">
+          <div class="tokenomics-stats">
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+              <h3>Circulating Supply</h3>
+              <p>35%</p>
+              <div class="description">Initial trading & community distribution</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+              <h3>Initial Burn</h3>
+              <p>15%</p>
+              <div class="description">Permanent token burn for deflation</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+              <h3>Team & Advisors</h3>
+              <p>10%</p>
+              <div class="description">2-year vesting, quarterly unlocks</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+              <h3>Development Fund</h3>
+              <p>10%</p>
+              <div class="description">Platform development & updates</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+              <h3>Marketing</h3>
+              <p>10%</p>
+              <div class="description">Growth & awareness campaigns</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
+              <h3>Community Rewards</h3>
+              <p>8%</p>
+              <div class="description">Staking rewards & initiatives</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="700">
+              <h3>Liquidity Pool</h3>
+              <p>7%</p>
+              <div class="description">Initial DEX liquidity</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="800">
+              <h3>Strategic Partnerships</h3>
+              <p>5%</p>
+              <div class="description">Future collaborations & expansion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAGA Section -->
+    <section id="maga" data-aos="fade-up">
+      <h2>Rise for All</h2>
+      <p class="section-intro">Join the rise of decentralized finance, powered by the voice of freedom!</p>
+      
+      <div class="maga-features">
+        <div class="maga-card">
+          <div class="maga-icon">💪</div>
+          <h3>Strong Leadership</h3>
+          <div class="maga-number">45%</div>
+          <p>Burn rate for maximum value appreciation</p>
+        </div>
+        <div class="maga-card">
+          <div class="maga-icon">🏛️</div>
+          <h3>Sound Fundamentals</h3>
+          <div class="maga-number">1776</div>
+          <p>Lines of audited smart contract code</p>
+        </div>
+        <div class="maga-card">
+          <div class="maga-icon">🦅</div>
+          <h3>Patriot Power</h3>
+          <div class="maga-number">100K</div>
+          <p>Strong community members</p>
+        </div>
+      </div>
+
+      <h3>The MAGA Promise</h3>
+      <ul class="promise-list">
+        <li class="promise-item">
+          <span class="promise-icon">🔒</span>
+          <div class="promise-content">
+            <h4>Unbreakable Security</h4>
+            <p>Multi-signature treasury and time-locked liquidity for maximum safety</p>
+          </div>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">📈</span>
+          <div class="promise-content">
+            <h4>Sustainable Tokenomics</h4>
+            <p>Designed to reward long-term holders and support continuous ecosystem growth</p>
+          </div>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">🤝</span>
+          <div class="promise-content">
+            <h4>Community Governance</h4>
+            <p>True democratic decision-making through DAO voting</p>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Our Vision for Crypto Greatness</h3>
+      <div class="vision-grid">
+        <div class="vision-card">
+          <div class="vision-icon">🏆</div>
+          <h4>Market Dominance</h4>
+          <p>Becoming the leading patriot-powered cryptocurrency</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-icon">🌐</div>
+          <h4>Global Influence</h4>
+          <p>Spreading financial freedom worldwide</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-icon">⚡</div>
+          <h4>Innovation Leadership</h4>
+          <p>Pioneering new blockchain technologies</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-icon">💎</div>
+          <h4>Value Creation</h4>
+          <p>Building lasting wealth for our community</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" data-aos="fade-up">
+      <h2>Strategic Roadmap</h2>
+      <div class="timeline">
+        <div class="timeline-item active">
+          <div class="quarter">Phase 1</div>
+          <div class="content">
+            <h3>Foundation</h3>
+            <ul>
+              <li>Launch RFA Token</li>
+              <li>Security Audit</li>
+              <li>Initial Marketing</li>
+              <li>CEX Listings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="quarter">Phase 2</div>
+          <div class="content">
+            <h3>Expansion</h3>
+            <ul>
+              <li>DAO Launch</li>
+              <li>NFT Collection</li>
+              <li>Staking Platform</li>
+              <li>Cross-Chain Bridge</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="quarter">Phase 3</div>
+          <div class="content">
+            <h3>Innovation</h3>
+            <ul>
+              <li>DEX Platform</li>
+              <li>Mobile Wallet</li>
+              <li>Payment Gateway</li>
+              <li>Yield Farming</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="quarter">Phase 4</div>
+          <div class="content">
+            <h3>Evolution</h3>
+            <ul>
+              <li>Metaverse Launch</li>
+              <li>Gaming Platform</li>
+              <li>DApp Ecosystem</li>
+              <li>AI Trading Tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community">
+      <h2>Join the Patriot Community</h2>
+      <div class="social-links">
+        <a href="https://twitter.com/riseforall" target="_blank" class="social-link twitter">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M22 5.8a8.49 8.49 0 0 1-2.36.64 4.13 4.13 0 0 0 1.81-2.27 8.21 8.21 0 0 1-2.61 1 4.1 4.1 0 0 0-7 3.74 11.64 11.64 0 0 1-8.45-4.29 4.16 4.16 0 0 0-.55 2.07 4.09 4.09 0 0 0 1.82 3.41 4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.86.07 4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 3 18.34a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 21 8.45v-.53A8.43 8.43 0 0 0 22 5.8z"/>
+          </svg>
+          Twitter
+        </a>
+        <a href="https://t.me/riseforallcoin" target="_blank" class="social-link telegram">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          Telegram
+        </a>
+        <a href="https://discord.gg/riseforall" target="_blank" class="social-link discord">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.5 4.25c.431 0 .75.325.75.75v11.5c0 .425-.319.75-.75.75h-11.5c-.425 0-.75-.325-.75-.75V4.75c0-.425.325-.75.75-.75h4.25v4.75c0 .425.325.75.75.75z"/>
+          </svg>
+          Discord
+        </a>
+        <a href="https://medium.com/@riseforall" target="_blank" class="social-link medium">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-.81 6.41-1.8 6.41-1 0-1.8-2.87-1.8-6.41s.81-6.41 1.8-6.41c1 0 1.8 2.87 1.8 6.41zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/>
+          </svg>
+          Medium
+        </a>
+        <a href="https://reddit.com/r/riseforall" target="_blank" class="social-link reddit">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.5 4.25c.431 0 .75.325.75.75v11.5c0 .425-.319.75-.75.75h-11.5c-.425 0-.75-.325-.75-.75V4.75c0-.425.325-.75.75-.75h4.25v4.75c0 .425.325.75.75.75z"/>
+          </svg>
+          Reddit
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Price Ticker -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <div class="price-main">
+        <span class="price-ticker-label">$RFA/SOL:</span>
+        <span class="price-ticker-value">$0.00000099</span>
+      </div>
+      <div class="price-details">
+        <span class="price-change">-3.05%</span>
+        <span class="volume-label">Vol:</span>
+        <span class="volume-value">$1.5M</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Solana Badge -->
+  <div class="powered-by-solana">
+    <svg class="solana-logo" viewBox="0 0 128 114" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="solana-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00FFA3">
+            <animate attributeName="stop-color"
+                     values="#00FFA3; #DC1FFF; #00FFA3"
+                     dur="4s"
+                     repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="#DC1FFF">
+            <animate attributeName="stop-color"
+                     values="#DC1FFF; #00FFA3; #DC1FFF"
+                     dur="4s"
+                     repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+      <path fill="url(#solana-gradient)" d="M108.53 75.6899L90.81 94.0799C90.4267 94.4799 89.9067 94.6999 89.34 94.6999H17.47C16.6233 94.6999 16.1933 93.6199 16.81 93.0099L34.53 74.6199C34.9133 74.2199 35.4333 73.9999 36 73.9999H107.87C108.717 73.9999 109.147 75.0799 108.53 75.6899ZM90.81 43.8699C90.4267 43.4699 89.9067 43.2499 89.34 43.2499H17.47C16.6233 43.2499 16.1933 44.3299 16.81 44.9399L34.53 63.3299C34.9133 63.7299 35.4333 63.9499 36 63.9499H107.87C108.717 63.9499 109.147 62.8699 108.53 62.2599L90.81 43.8699ZM17.47 33.1999H89.34C89.9067 33.1999 90.4267 32.9799 90.81 32.5799L108.53 14.1899C109.147 13.5799 108.717 12.4999 107.87 12.4999H36C35.4333 12.4999 34.9133 12.7199 34.53 13.1199L16.81 31.5099C16.1933 32.1199 16.6233 33.1999 17.47 33.1999Z"/>
+    </svg>
+    <span class="solana-text">Powered by Solana</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.svg" alt="Rise for All Logo" width="40" height="40">
+        <p>&#169; 2025 Rise for All. A World Reimagined, A Future Shared</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="price-database.js"></script>
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <div id="particles-js"></div>
+  <script src="ca.js"></script>
+  <script src="social-links.js"></script>
+</body>
+</html>
